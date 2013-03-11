@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C11B92916ED4E7300036FEB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C11B92816ED4E7300036FEB /* OpenGL.framework */; };
+		7C11B92B16ED4E7900036FEB /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C11B92A16ED4E7900036FEB /* GLUT.framework */; };
+		7C11B92D16ED4E8E00036FEB /* libSOIL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C11B92C16ED4E8E00036FEB /* libSOIL.a */; };
+		7C11B92F16ED4EA300036FEB /* SOIL.h in Sources */ = {isa = PBXBuildFile; fileRef = 7C11B92E16ED4EA300036FEB /* SOIL.h */; };
 		7C52EA8A16ED4E1900357335 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C52EA8916ED4E1900357335 /* main.cpp */; };
 		7C52EA8C16ED4E1900357335 /* Project1.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7C52EA8B16ED4E1900357335 /* Project1.1 */; };
+		7CE9D88F16EE2593007CBAA4 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CE9D88E16EE2593007CBAA4 /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +30,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7C11B92816ED4E7300036FEB /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		7C11B92A16ED4E7900036FEB /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		7C11B92C16ED4E8E00036FEB /* libSOIL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSOIL.a; path = SOIL/lib/libSOIL.a; sourceTree = "<group>"; };
+		7C11B92E16ED4EA300036FEB /* SOIL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SOIL.h; path = SOIL/src/SOIL.h; sourceTree = "<group>"; };
 		7C52EA8616ED4E1900357335 /* Project1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project1; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C52EA8916ED4E1900357335 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		7C52EA8B16ED4E1900357335 /* Project1.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Project1.1; sourceTree = "<group>"; };
+		7CE9D88E16EE2593007CBAA4 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE9D88F16EE2593007CBAA4 /* CoreFoundation.framework in Frameworks */,
+				7C11B92D16ED4E8E00036FEB /* libSOIL.a in Frameworks */,
+				7C11B92B16ED4E7900036FEB /* GLUT.framework in Frameworks */,
+				7C11B92916ED4E7300036FEB /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +58,11 @@
 		7C52EA7D16ED4E1900357335 = {
 			isa = PBXGroup;
 			children = (
+				7CE9D88E16EE2593007CBAA4 /* CoreFoundation.framework */,
+				7C11B92E16ED4EA300036FEB /* SOIL.h */,
+				7C11B92C16ED4E8E00036FEB /* libSOIL.a */,
+				7C11B92A16ED4E7900036FEB /* GLUT.framework */,
+				7C11B92816ED4E7300036FEB /* OpenGL.framework */,
 				7C52EA8816ED4E1900357335 /* Project1 */,
 				7C52EA8716ED4E1900357335 /* Products */,
 			);
@@ -117,6 +136,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C11B92F16ED4EA300036FEB /* SOIL.h in Sources */,
 				7C52EA8A16ED4E1900357335 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +206,10 @@
 		7C52EA9016ED4E1900357335 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SOIL/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -193,6 +217,10 @@
 		7C52EA9116ED4E1900357335 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SOIL/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -216,6 +244,7 @@
 				7C52EA9116ED4E1900357335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
